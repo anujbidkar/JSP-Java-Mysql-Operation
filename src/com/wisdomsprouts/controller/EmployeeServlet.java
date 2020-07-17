@@ -19,7 +19,7 @@ public class EmployeeServlet extends HttpServlet {
 	private EmployeeDao employeeDao;
 
     public void init() {
-        employeeDao = new EmployeeDao();
+        employeeDao = new EmployeeDao(); 
     }
     public EmployeeServlet() {
         super();
@@ -46,12 +46,13 @@ public class EmployeeServlet extends HttpServlet {
 
     	        try {
     	            employeeDao.registerEmployee(employee);
+        	        response.sendRedirect("employeedetails.jsp");
+
     	        } catch (Exception e) {
     	            // TODO Auto-generated catch block
     	            e.printStackTrace();
     	        }
 
-    	        response.sendRedirect("employeedetails.jsp");
     	    }
 	
 
